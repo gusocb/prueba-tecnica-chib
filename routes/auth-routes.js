@@ -70,4 +70,13 @@ router.post('/workers/logout', (req, res) => {
   res.status(200).json({ message: 'Log out success!' });
 });
 
+router.get('/workers/loggedin', (req, res, next) => {
+  if (req.isAuthenticated()) {
+      res.status(200).json(req.user);
+      return;
+  }
+  res.status(403).json({ message: 'Unauthorized' });
+});
+
+
 module.exports = router;

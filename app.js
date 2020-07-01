@@ -8,6 +8,8 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const cors         = require('cors');
+
 
 
 //authentication dependencies
@@ -67,6 +69,13 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
+//connection with front
+app.use(
+  cors({
+    credentials: true,
+    origin: ['http://localhost:3000']
+  })
+);
 
 //routes
 app.use('/api', require('./routes/index'));
