@@ -19,7 +19,7 @@ require('./configs/passport')
 
 //database
 mongoose
-  .connect('mongodb://localhost/prueba-tecnica-chib', {useNewUrlParser: true})
+  .connect(process.env.DB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
