@@ -21,7 +21,7 @@ const userSchema = new Schema(
       unique: true
     },
     birthday: {
-      type:String,
+      type: Date,
       required:true
     },
     profession: {
