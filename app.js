@@ -73,7 +73,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 app.use(
   cors({
     credentials: false,
-    origin: 'https://prueba-tecnica-chib.netlify.app/'
+    origin: 'https://prueba-tecnica-chib.netlify.app'
   })
 );
 
